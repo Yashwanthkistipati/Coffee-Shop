@@ -1,0 +1,10 @@
+<div class="coffee-blend-container">
+    <h1>Blend Your Own Coffee</h1>
+    <app-ingredient-list (ingredientSelected)="addIngredient($event)"></app-ingredient-list>
+    <ul>
+      <li *ngFor="let ingredient of selectedIngredients">
+        {{ ingredient.name }}: {{ ingredient.quantity }}g
+      </li>
+    </ul>
+  </div>
+  

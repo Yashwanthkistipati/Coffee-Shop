@@ -1,0 +1,15 @@
+<div class="ingredients-container">
+    <button *ngFor="let ingredient of ingredients" (click)="selectIngredient(ingredient)">
+      {{ ingredient }}
+    </button>
+  </div>
+  
+  <div *ngIf="selectedIngredient">
+    <h3>Enter quantity for {{ selectedIngredient }} (in grams):</h3>
+    <input type="number" [(ngModel)]="quantity" placeholder="Enter quantity">
+    <button (click)="confirmIngredient()">Add Ingredient</button>
+  </div>
+  <div *ngIf="selectedIngredients.length > 0">
+    <button (click)="blendNow()">Blend Now</button>
+  </div>
+  

@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>
+    <img src="assets/logo.png" alt="Coffee Cup" class="coffee-cup-logo">
+    {{ title }}
+  </h1>
+
+  <app-ingredient-list (ingredientSelected)="onIngredientSelected($event)"></app-ingredient-list>
+
+  <div *ngIf="selectedIngredients.length > 0">
+    <h2>Selected Ingredients:</h2>
+    <ul>
+      <li *ngFor="let ingredient of selectedIngredients; let i = index">
+        {{ ingredient.name }}: {{ ingredient.quantity }} grams
+        <button (click)="removeIngredient(i)">Remove</button>
+      </li>
+    </ul>
+  </div>
+</div>
